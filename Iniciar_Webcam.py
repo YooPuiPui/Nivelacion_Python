@@ -23,9 +23,9 @@ def iniciar():
     if capture is not None:
         ret, frame = capture.read()
         if ret == True:
-            frame = imutils.resize(frame, width=311)
-            frame = imutils.resize(frame, height=241)
-            ImagenCamara = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            frame = imutils.resize(frame, width=311) # es el ancho de la imagen
+            frame = imutils.resize(frame, height=241) # la altura
+            ImagenCamara = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)  # que sea full a color
             im = Image.fromarray(ImagenCamara)
             img = ImageTk.PhotoImage(image= im)
             LImagen.configure(image= img)
